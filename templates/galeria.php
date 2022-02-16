@@ -20,36 +20,30 @@ require_once("../model/servidor/conexao.php");
             </div>
         </section>
         <section>
-
             <?php
             $sql = "SELECT id,nome, nome_img FROM dados";
             $result = $conn_bd->query($sql);
             if ($result->num_rows > 0) {
                 while ($row = $result->fetch_assoc()) {
-                    ?>
-
-                        <div class="efeito w3-text-black">
-                            <input readonly type="hidden" value="<?php echo $row["id"]; ?>">
-                            <img id="efeito" class=" w3-round w3-card-4 " width="80%" src="../model/crud/uploads/<?php echo $row["nome"]; ?>">
-
-                            <p class="w3-round-large w3-text w3-black w3-border-bottom w3-padding">
-                                <?php echo $row["nome_img"]; ?>
-                            </p>
-                            <div class="w3-margin-bottom">
-
-     <a href="confirmadel.php?id=<?php echo $row["id"]?>" class="w3-button w3-red w3-round w3-hover-orange">Deletar</a>
-        <a href="confirmaup.php?id=<?php echo $row["id"]?>" class="w3-button w3-yellow w3-round w3-hover-amber">Editar</a>
-                            </div>
+            ?>
+                    <div class="efeito w3-text-black">
+                        <input readonly type="hidden" value="<?php echo $row["id"]; ?>">
+                        <img id="efeito" class="box-img w3-round w3-card-4 "  src="../model/crud/uploads/<?php echo $row["nome"]; ?>">
+                        <p class="w3-round-large w3-text w3-black w3-border-bottom w3-padding">
+                            <?php echo $row["nome_img"]; ?>
+                        </p>
+                        <div class="w3-margin-bottom">
+                            <a href="confirmadel.php?id=<?php echo $row["id"] ?>" class="w3-button w3-red w3-round w3-hover-orange">Deletar</a>
+                            <a href="confirmaup.php?id=<?php echo $row["id"] ?>" class="w3-button w3-yellow w3-round w3-hover-amber">Editar</a>
                         </div>
-
-                        <?php
-                    }
-                } else {
-                    echo "Nenhuma imagen salva na galeria";
+                    </div>
+            <?php
                 }
-        
-                ?>
+            } else {
+                echo "Nenhuma imagen salva na galeria";
+            }
+            ?>
         </section>
         <script src="../assets/js/main.js"></script>
-    </body>
+</body>
 </html>

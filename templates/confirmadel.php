@@ -24,22 +24,19 @@ $row = mysqli_fetch_assoc($result);
         </section>
         <section>
             <div class="">
-<form class="efeito w3-text-black">
+                <form class="efeito w3-text-black">
                     <input readonly type="hidden" value="<?php echo $row["id"]; ?>">
-                    <img id="efeito" class=" w3-round w3-card-4 " width="80%" src="../model/crud/uploads/<?php echo $row["nome"]; ?>">
-
+                    <img id="efeito" class="box-upd-img w3-round w3-card-4 " src="../model/crud/uploads/<?php echo $row["nome"]; ?>">
                     <p class="w3-round-large w3-text w3-black w3-border-bottom w3-padding">
                         <?php echo $row["nome_img"]; ?>
                     </p>
                     <div class="w3-margin-bottom">
-        <a class="w3-button w3-red w3-round w3-hover-orange"  href="../model/crud/delete.php?id=<?php echo $row["id"]?>">Sim</a>
-        
+                        <a class="w3-button w3-red w3-round w3-hover-orange" href="../model/crud/delete.php?id=<?php echo $row["id"] ?>">Sim</a>
                         <a href="galeria.php" class="w3-button w3-yellow w3-round w3-hover-amber">Não</a>
                     </div>
                 </form>
-
             </div>
         </section>
         <script src="../assets/js/main.js"></script>
-    </body>
+</body>
 </html>

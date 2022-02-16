@@ -27,7 +27,7 @@ $conn_bd->close();
             <div class="">
                 <form action="../model/crud/update.php?id=<?php echo $row["id"] ?>" class="efeito w3-text-black">
                     <input name="id" readonly type="hidden" value="<?php echo $row["id"]; ?>">
-                    <img name="nome_img"id="efeito" class=" w3-round w3-card-4 " width="80%" src="../model/crud/uploads/<?php echo $row["nome"]; ?>">
+                    <img name=" nome_img"id="efeito" class="box-upd-img w3-round w3-card-4 "   src="../model/crud/uploads/<?php echo $row["nome"]; ?>">
                 <div class="w3-margin-top box-name">
                     <label class=" w3-text-blue" for="img"><b> Nome da Imagen:</b> </label>
                     <input autocomplete="off"type="text" id="nome_upd" class="w3-input w3-border" name="nome_img" value="<?php echo $row["nome_img"] ?>">
@@ -37,7 +37,6 @@ $conn_bd->close();
                         <a href="galeria.php" class="w3-button w3-yellow w3-round w3-hover-amber">Voltar</a>
                     </div>
                 </form>
-
             </div>
         </section>
         <script src="../assets/js/main.js"></script>
