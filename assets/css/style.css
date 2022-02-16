@@ -17,9 +17,31 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
+.box-img{
+    width:80%;
+}
 .box-name{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.box-upd-img{
+    width: 80%;
+}
+@media screen and (min-width: 600px) {
+    .box {
+    margin: 0 auto;
+    width: 30%;
+    }
+    .name-box{
+        text-align: center;
+    }
+    .box-img{
+        width: 25%;
+    }
+    .box-upd-img{
+        width: 20%;
+    }
+  }
+  
