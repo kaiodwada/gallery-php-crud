@@ -11,11 +11,11 @@
 </head>
 <body>
     <main class="w3-monospace">
-        <div class="w3-container w3-margin-bottom w3-card w3-blue">
+        <div class="w3-container w3-margin-bottom w3-card w3-blue name-box">
             <h3 class="w3-monospace">Enviar imagen</h3>
         </div>
-        <section class=" w3-card w3-container">
-            <form enctype="multipart/form-data"action="model/crud/create.php" id="formImg" method="POST" class="w3-padding w3-margin-bottom">
+        <section class=" w3-card w3-container box">
+            <form enctype="multipart/form-data"action="model/crud/create.php" id="formImg" method="POST" class="w3-padding w3-margin-bottom form-box">
                 <label class="w3-text-blue" for="nome"><b> Nome da imagen:</b> </label><input autocomplete="off" type="text" id="nome" class="w3-input w3-border" name="nome" placeholder="Escreva o nome da imagen">
                 <div id="ErroNome"class="w3-padding w3-round w3-panel w3-red">
                     <p class="">
