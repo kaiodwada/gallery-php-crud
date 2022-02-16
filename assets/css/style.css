@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.efeito{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.efeito p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.box-name{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
