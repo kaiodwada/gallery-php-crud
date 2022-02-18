@@ -28,7 +28,7 @@ require_once("../model/servidor/conexao.php");
             ?>
                     <div class="efeito w3-text-black">
                         <input readonly type="hidden" value="<?php echo $row["id"]; ?>">
-                        <img id="efeito" class="box-img w3-round w3-card-4 "  src="../model/crud/uploads/<?php echo $row["nome"]; ?>">
+        <img id="efeito" class="box-img w3-round w3-card-4 "  src="../model/crud/uploads/<?php echo $row["nome"]; ?>">
                         <p class="w3-round-large w3-text w3-black w3-border-bottom w3-padding">
                             <?php echo $row["nome_img"]; ?>
                         </p>
