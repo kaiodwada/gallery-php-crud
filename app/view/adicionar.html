@@ -11,33 +11,31 @@
 <body>
 
     <main class="w3-monospace">
-        <div class="w3-container w3-margin-bottom w3-card w3-blue name-box">
+        <div class="w3-container w3-margin-bottom w3-card w3-blue name-box w4">
             <h3 class="w3-monospace">Enviar imagen</h3>
         </div>
         <section class=" w3-card w3-container box">
-            <form method="POST" action="model/crud/create.php" enctype="multipart/form-data" id="formImg" class="w3-padding w3-margin-bottom form-box">
-                <label class="w3-text-blue" for="nome"><b> Nome da imagen:</b> </label><input autocomplete="off" type="text" id="nome" class="w3-input w3-border" name="nome" placeholder="Escreva o nome da imagen">
-                <div id="ErroNome" class="w3-padding w3-round w3-panel w3-red alert">
-                    <p class="">
-                        Você precisa adicionar um nome para a imagen
-                    </p>
-                </div>
-                <label class="w3-text-blue" for="img"><b> Imagen:</b> </label><input  accept="image/*" type="file" id="img" class="w3-input w3-border" name="img">
-                <div id="ErroImg" class="w3-round w3-padding w3-panel w3-red alert">
-                    <p class="">
-                        Você precisa adicionar uma imagen
-                    </p>
-                </div>
+            <form id="formImg" class="w3-padding w3-margin-bottom form-box w3-margin-top">
+                <label class="w3-text-blue" for="nome"><b> Nome da imagen:</b> </label>
+                <input id="nameImg" autocomplete="off" type="text"  class="w3-input w3-border w3-margin-top w3-margin-bottom" name="nome" placeholder="Escreva o nome da imagen">
+               
+                <label class="w3-text-blue " for="img"><b> Imagen:</b> </label>
+                <input id="img" accept="image/*" type="file"  class="w3-input w3-border w3-margin-top">
                 <div class="w3-center">
-                    <a href="" class="w3-round w3-margin w3-button w3-blue w3-hover-green">Enviar</a>
+                    <button id="btn1" type="submit" class="w3-margin-top w3-round w3-button w3-blue w3-hover-green">Enviar</button>
+                </div>
+                <div id="Erro" class="w3-padding w3-round w3-panel w3-red alert">
+                    <p class="">
+                        Você precisa preencher todos os campos                    </p>
                 </div>
             </form>
         </section>
 
         <section class="w3-margin-top w3-center">
-            <a href="http://localhost/gallery-php-crud/Galeria" class="w3-button w3-hover-purple  w3-black w3-round" >Galeria</a>
+            <a href="http://localhost/gallery-php-crud/Cadastro/galeria" class="w3-button w3-hover-purple  w3-black w3-round" >Galeria</a>
         </section>
     </main>
+    <script src="http://localhost/gallery-php-crud/assets/js/Jquery.js"></script>
     <script src="http://localhost/gallery-php-crud/assets/js/main.js"></script>
 </body>
 

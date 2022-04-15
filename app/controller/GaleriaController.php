@@ -1,9 +1,9 @@
 <?php
 
+use Lib\Server\Connection;
+
 class GaleriaController
-
 {
-
     public function index()
     {
         $loader = new \Twig\Loader\FilesystemLoader('app/view/');
@@ -12,5 +12,10 @@ class GaleriaController
 
         $parametros = array();
         return $template->render($parametros);
+    }
+
+    public function cadastro(){
+      
+
     }
 }

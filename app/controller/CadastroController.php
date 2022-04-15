@@ -1,5 +1,7 @@
 <?php
 
+use Lib\Server\Connection;
+
 class CadastroController
 {
 
@@ -14,6 +16,7 @@ class CadastroController
     }
     public function galeria()
     {
+        $conn = Connection::connDb();
         $loader = new \Twig\Loader\FilesystemLoader('app/view/');
         $twig = new \Twig\Environment($loader);
         $template = $twig->load('galeria.html');

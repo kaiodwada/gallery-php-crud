@@ -1,22 +1,26 @@
-ErroNome = document.getElementById("ErroNome");
-ErroImg = document.getElementById("ErroImg");
 
-function validar() {
-  let nome = formImg.nome.value;
-  let img = formImg.img.value;
-  
-    if (nome == "") {
-        event.preventDefault();
-        ErroNome.style.display = "block";
-        formImg.nome.focus();
-        return false;
+$('#formImg').submit(function (e){
+    e.preventDefault();
+
+    let nameImg = $('#nameImg').val();
+    let file = $('#img').val();
+    let Erro = $('#Erro');
+
+    if(nameImg == ''){
+        Erro.focus();
+        Erro.css({
+            display: 'block'
+        })
+    }if(file == ''){
+        Erro.focus();
+        Erro.css({
+            display: 'block'
+        })
+    }else{
+        console.log(nameImg, file);
     }
-    if (img == "") {
-        event.preventDefault();
-        ErroImg.style.display = "block";
-        formImg.img.focus();
-        return false;
-    }
-};
+    
+});
+
 
 
