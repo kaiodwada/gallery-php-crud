@@ -15,12 +15,12 @@
             <h3 class="w3-monospace">Enviar imagen</h3>
         </div>
         <section class=" w3-card w3-container box">
-            <form id="formImg" class="w3-padding w3-margin-bottom form-box w3-margin-top">
+            <form id="formImg" action="http://localhost/gallery-php-crud/cadastro/addImage" method="POST" enctype="multipart/form-data" class="w3-padding w3-margin-bottom form-box w3-margin-top">
                 <label class="w3-text-blue" for="nome"><b> Nome da imagen:</b> </label>
-                <input id="nameImg" autocomplete="off" type="text"  class="w3-input w3-border w3-margin-top w3-margin-bottom" name="nome" placeholder="Escreva o nome da imagen">
+                <input id="nameImg" name="nameImg" autocomplete="off" type="text"  class="w3-input w3-border w3-margin-top w3-margin-bottom" name="nome" placeholder="Escreva o nome da imagen">
                
                 <label class="w3-text-blue " for="img"><b> Imagen:</b> </label>
-                <input id="img" accept="image/*" type="file"  class="w3-input w3-border w3-margin-top">
+                <input id="img" name="img" accept=".png,.jpg,.jpeg, .webp" type="file"  class="w3-input w3-border w3-margin-top">
                 <div class="w3-center">
                     <button id="btn1" type="submit" class="w3-margin-top w3-round w3-button w3-blue w3-hover-green">Enviar</button>
                 </div>
