@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.5deb2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 18-Fev-2022 às 17:50
--- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.1
+-- Host: localhost:3306
+-- Tempo de geração: 21-Abr-2022 às 17:26
+-- Versão do servidor: 8.0.28-0ubuntu0.20.04.3
+-- versão do PHP: 7.4.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -28,19 +29,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `dados` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nome_img` varchar(40) NOT NULL,
-  `nome` varchar(40) NOT NULL
+  `path` varchar(100) CHARACTER SET utf16 COLLATE utf16_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16;
 
 --
 -- Extraindo dados da tabela `dados`
 --
 
-INSERT INTO `dados` (`id`, `nome_img`, `nome`) VALUES
-(1, 'Aurora Boreal(russia)', '62081b2d33354.jpg'),
-(2, 'Logo Dentalhelth', '62082556d08dd.jpg'),
-(3, 'Dentistas na clínica', '620869b9dc18a.jpg');
+INSERT INTO `dados` (`id`, `nome_img`, `path`) VALUES
+(3, 'RATINHOOOOOOOOOOOOOOOOOOOO', '6260a58e0f7b7.png'),
+(4, 'teste', '6260a5c57d7d4.png'),
+(5, 'comunaldo', '6261a0b0a383d.png'),
+(6, 'tetet', '6261b3157f8e7.png'),
+(7, 'tarios', '6261bd80abd16.png');
 
 --
 -- Índices para tabelas despejadas
@@ -60,7 +63,7 @@ ALTER TABLE `dados`
 -- AUTO_INCREMENT de tabela `dados`
 --
 ALTER TABLE `dados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
