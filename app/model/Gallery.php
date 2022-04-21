@@ -33,4 +33,16 @@ class Gallery
       $stmt->bindValue(':i', $this->imagem);
       $stmt->execute();
    }
+   public static function selectImagem()
+   {
+      $conn = Connection::connDb();
+      $sql = "SELECT * FROM dados";
+      $sql = $conn->prepare($sql);
+      $sql->execute();
+      $result = array();
+      while($row = $sql->fetchObject('Gallery') ){
+         $result[] = $row;
+      }
+      return $result;
+   }
 }

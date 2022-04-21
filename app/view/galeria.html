@@ -19,20 +19,22 @@
                     Imagem</a>
             </div>
         </section>
+
         <section>
-
-            <div class="efeito w3-text-black">
-               <!--  <input readonly type="hidden" value="">
-                <img id="efeito" class="box-img w3-round w3-card-4 " src="">
-                <p class="w3-round-large w3-text w3-black w3-border-bottom w3-padding">
-
-                </p> -->
-               <!--  <div class="w3-margin-bottom">
-                    <a href="" class="w3-button w3-red w3-round w3-hover-orange">Deletar</a>
-                    <a href="" class="w3-button w3-yellow w3-round w3-hover-amber">Editar</a>
-                </div> -->
-            </div>
-
+            <div class="efeito">
+                <div class="row w3-text-black">
+                    {% for img in galeria %}
+                    <input readonly type="hidden" value="{{img.id}}">
+                    <img id="efeito" src="/gallery-php-crud/Files/{{img.path}}" class="box-img w3-round w3-card-4">
+                    <span>{{img.nome_img}}</span> 
+                    {% endfor %}
+                </div>
+            </div>        
+    <!--           <div class="w3-margin-bottom">
+                        <a href="" class="w3-button w3-red w3-round w3-hover-orange">Deletar</a>
+                        <a href="" class="w3-button w3-yellow w3-round w3-hover-amber">Editar</a>
+                    </div> 
+    -->
         </section>
         <script src="http://localhost/gallery-php-crud/assets/js/Jquery.js"></script>
     </main>
