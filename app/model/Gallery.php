@@ -36,7 +36,7 @@ class Gallery
    public static function selectImagem()
    {
       $conn = Connection::connDb();
-      $sql = "SELECT * FROM dados LIMIT 5";
+      $sql = "SELECT id, nome_img, path FROM dados LIMIT 0, 5";
       $sql = $conn->prepare($sql);
       $sql->execute();
       $result = array();

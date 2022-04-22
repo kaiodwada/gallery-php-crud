@@ -1,4 +1,6 @@
 <?php
+
+
 class Core
 {
     private $url;
@@ -6,9 +8,11 @@ class Core
     private $method = 'index';
     private $params = array();
     private $user;
-  
+
     public function start($request)
     {
+
+       var_dump($request);
         if (isset($request['url'])) {
             $this->url = explode('/', $request['url']);
 
@@ -22,14 +26,15 @@ class Core
                     $this->params = $this->url;
                 }
             }
+           
         }
-    
        if ($this->user) {
             $page = ['GaleriaController'];
 
             if (!isset($this->controller) || !in_array($this->controller, $page)) {
                 $this->controller = 'GaleriaController';
                 $this->method = 'index';
+              
             }
         } else {
             $page = ['CadastroController'];
@@ -37,6 +42,7 @@ class Core
             if (!isset($this->controller) || !in_array($this->controller, $page)) {
                 $this->controller = 'CadastroController';
                 $this->method = 'index';
+                
             }
         } 
 

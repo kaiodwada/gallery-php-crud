@@ -11,23 +11,32 @@ class CadastroController
         $parametros = array();
         return $template->render($parametros);
     }
+    /* public function paginator($pag)
+    {
+        $galeria = Gallery::selectImagem();
+        $total = count(Gallery::selectImagem()); 
+        $limit = 5;
+        $start = ($limit*$pag);
+        
+    } */
     public function galeria()
     {
         $galeria = Gallery::selectImagem();
         $loader = new \Twig\Loader\FilesystemLoader('app/view/');
         $twig = new \Twig\Environment($loader);
         $template = $twig->load('galeria.html');
-       
+
         $parametros = array();
         $parametros['galeria'] = $galeria; 
-     
+      
         return $template->render($parametros);
     }
+    
     public function addImage()
     {
         $galeria = new Gallery();
-        $name = filter_input(INPUT_POST, 'nameImg', FILTER_SANITIZE_SPECIAL_CHARS);
-       
+        $nameRec = filter_input(INPUT_POST, 'nameImg', FILTER_SANITIZE_SPECIAL_CHARS);
+        $name = ucfirst($nameRec);
         $extensao = strtolower(substr($_FILES['img']['name'], -4));
         $novo_nome = uniqid() . $extensao; 
         $dir = "/var/www/html/gallery-php-crud/Files/";
