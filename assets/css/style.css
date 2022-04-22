@@ -8,9 +8,16 @@
 .row {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 .box-img {
     width: 80%;
+}
+.row > img, .row > span {
+    margin: 5px;
+    margin-bottom: 20px;
 }
 .box-name {
     display: flex;
@@ -38,18 +45,13 @@
     .box-upd-img {
         width: 20%;
     }
-}
-@media screen and (min-width: 900px) {
-    .efeito {
+    .row {
         display: flex;
-        justify-content: center;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
+        justify-content: center;
         align-content: center;
+        align-items: center;
     }
-    .row > img {
-        margin: 5px;
-        margin-bottom: 20px;
-    }
-    
+
 }
