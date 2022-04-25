@@ -19,12 +19,12 @@
                     Imagem</a>
             </div>
         </section>
-
+      
         <section>
-         
+
             <div class="efeito">
                 <div class="row w3-text-black">    
-                    {% for img in galeria %}
+                    {% for img in galeria%}
                         <input readonly type="hidden" value="{{img.id}}">
                         <img id="efeito" src="/gallery-php-crud/Files/{{img.path}}" class="box-img w3-round w3-card-4">
                        <span class="w3-padding w3-red w3-round">{{img.nome_img}}</span>     
@@ -33,15 +33,15 @@
             </div>   
             <div class="w3-center">
                 <div class="w3-bar w3-border w3-text-white w3-black w3-round">
-                  <a href="#" class="w3-bar-item w3-button">&laquo;</a>
-                  <a href="http://localhost/gallery-php-crud/Cadastro/galeria/1" class="w3-button">1</a>
-                  <a href="http://localhost/gallery-php-crud/Cadastro/galeria/2" class="w3-button">2</a>
-                  <a href="http://localhost/gallery-php-crud/Cadastro/galeria/3" class="w3-button">3</a>
-                  <a href="http://localhost/gallery-php-crud/Cadastro/galeria/4" class="w3-button">4</a>
-                  <a href="#" class="w3-button">&raquo;</a>
+                  <!-- <a href="{{1 - 1}}" class="w3-bar-item w3-button">&laquo;</a> -->
+                {% for i in 1..totalP %}
+                  <a href="http://localhost/gallery-php-crud/Cadastro/galeria/?page={{ i }}" class="w3-button">{{ i }}</a>
+                {% endfor %}
+                  <!-- <a href="+ {{1}}" class="w3-button">&raquo;</a> -->
                 </div>
-                </div>      
+            </div>      
         </section>
+        
         <script src="http://localhost/gallery-php-crud/assets/js/Jquery.js"></script>
     </main>
 </body>

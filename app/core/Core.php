@@ -11,8 +11,6 @@ class Core
 
     public function start($request)
     {
-
-       var_dump($request);
         if (isset($request['url'])) {
             $this->url = explode('/', $request['url']);
 

@@ -1,5 +1,7 @@
 <?php
 
+use Lib\Server\Connection;
+
 class CadastroController
 {
     public function index()
@@ -7,28 +9,23 @@ class CadastroController
         $loader = new \Twig\Loader\FilesystemLoader('app/view/');
         $twig = new \Twig\Environment($loader);
         $template = $twig->load('adicionar.html');
-
+       
         $parametros = array();
         return $template->render($parametros);
     }
-    /* public function paginator($pag)
-    {
-        $galeria = Gallery::selectImagem();
-        $total = count(Gallery::selectImagem()); 
-        $limit = 5;
-        $start = ($limit*$pag);
-        
-    } */
     public function galeria()
     {
-        $galeria = Gallery::selectImagem();
+        $galeria = new Gallery();
+        $galeria->selectImagem();
         $loader = new \Twig\Loader\FilesystemLoader('app/view/');
         $twig = new \Twig\Environment($loader);
         $template = $twig->load('galeria.html');
-
+       
+        $galeria->totalP;
         $parametros = array();
-        $parametros['galeria'] = $galeria; 
-      
+        $parametros['galeria'] = $galeria->selectImagem(); 
+        $parametros['totalP'] = $galeria->totalP;
+
         return $template->render($parametros);
     }
     
