@@ -1,3 +1,10 @@
+function w3_open() {
+    document.getElementById("mySidebar").style.display = "block";
+  }
+  
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
 let imagem = document.querySelector('[name=img]')
     imagem.addEventListener('change', e => {
         let file = e.target.files[0]

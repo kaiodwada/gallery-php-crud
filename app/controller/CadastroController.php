@@ -1,7 +1,5 @@
 <?php
 
-use Lib\Server\Connection;
-
 class CadastroController
 {
     public function index()

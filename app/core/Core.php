@@ -7,7 +7,7 @@ class Core
     private $controller;
     private $method = 'index';
     private $params = array();
-    private $user;
+    
 
     public function start($request)
     {
@@ -26,15 +26,17 @@ class Core
             }
            
         }
+       /* 
        if ($this->user) {
-            $page = ['GaleriaController'];
+            $page = ['EditarController'];
 
             if (!isset($this->controller) || !in_array($this->controller, $page)) {
-                $this->controller = 'GaleriaController';
+                $this->controller = 'EditarController';
                 $this->method = 'index';
               
             }
-        } else {
+        }
+       else {
             $page = ['CadastroController'];
 
             if (!isset($this->controller) || !in_array($this->controller, $page)) {
@@ -42,7 +44,23 @@ class Core
                 $this->method = 'index';
                 
             }
-        } 
+        } */
+
+        if($request['url'] == 'Editar'){
+            $page = ['EditarController']; 
+                if (!isset($this->controller) || !in_array($this->controller, $page)) {
+                        $this->controller = 'EditarController';
+                        $this->method = 'index';
+                        
+                }
+        } else {
+            $page = ['CadastroController'];
+            if (!isset($this->controller) || !in_array($this->controller, $page)) {
+                $this->controller = 'CadastroController';
+                $this->method = 'index';
+                
+            }
+        }
 
         return call_user_func(array(new $this->controller, $this->method), $this->params);
     }
