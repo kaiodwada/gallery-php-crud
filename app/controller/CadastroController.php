@@ -22,10 +22,11 @@ class CadastroController
         $template = $twig->load('galeria.html');
        
         $galeria->totalP;
+        $galeria->totalR;
         $parametros = array();
         $parametros['galeria'] = $galeria->selectImagem(); 
         $parametros['totalP'] = $galeria->totalP;
-
+        $parametros['totalRegistros'] = $galeria->totalR;
         return $template->render($parametros);
     }
     
@@ -37,12 +38,12 @@ class CadastroController
         $extensao = strtolower(substr($_FILES['img']['name'], -4));
         $novo_nome = uniqid() . $extensao; 
         $dir = "/var/www/html/gallery-php-crud/Files/";
-
         if (move_uploaded_file($_FILES['img']['tmp_name'], $dir . $novo_nome)) {
-            $galeria->setName($name);
-            $galeria->setImagem($novo_nome);
-            $galeria->inserirImagem();
-            echo '<script>location.href = "http://localhost/gallery-php-crud/Cadastro/galeria"</script>';    
-        }
+                $galeria->setName($name);
+                $galeria->setImagem($novo_nome);
+                $galeria->inserirImagem();
+                echo '<script>location.href = "http://localhost/gallery-php-crud/Cadastro/galeria"</script>';    
+            }  
+        
     }
 }

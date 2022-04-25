@@ -8,6 +8,7 @@ class Gallery
    public $imagem;
    public $totalP;
    public $stmt;
+   public $totalR;
 
    public function setImagem($imagem)
    {
@@ -40,14 +41,14 @@ class Gallery
       $conn = Connection::connDb();
       $stmt = $conn->prepare("SELECT COUNT(*) FROM dados");
       $stmt->execute();
-      $totalR = $stmt->fetchColumn();
+      $this->totalR = $stmt->fetchColumn();
       
       $porPagina = 5;
       $page = isset($_GET['page']) ?  $_GET['page'] : 1;
       $x = ($page - 1) * $porPagina;
       $y = $porPagina;
       
-      $this->totalP = ceil($totalR / $porPagina);
+      $this->totalP = ceil($this->totalR / $porPagina);
 
       $sql = "SELECT  * FROM `dados` ORDER BY `id` LIMIT $x,$y";
       $sql = $conn->prepare($sql);

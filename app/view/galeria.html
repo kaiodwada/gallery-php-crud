@@ -19,9 +19,11 @@
                     Imagem</a>
             </div>
         </section>
-      
+    
         <section>
-
+            <div class="w3-blue w3-round w3-padding w3-center w3-margin-bottom">
+                Total de imagens na galeria : <span class="w3-badge w3-round w3-purple">{{totalRegistros}}</span> 
+            </div>    
             <div class="efeito">
                 <div class="row w3-text-black">    
                     {% for img in galeria%}
@@ -33,11 +35,9 @@
             </div>   
             <div class="w3-center">
                 <div class="w3-bar w3-border w3-text-white w3-black w3-round">
-                  <!-- <a href="{{1 - 1}}" class="w3-bar-item w3-button">&laquo;</a> -->
                 {% for i in 1..totalP %}
                   <a href="http://localhost/gallery-php-crud/Cadastro/galeria/?page={{ i }}" class="w3-button">{{ i }}</a>
                 {% endfor %}
-                  <!-- <a href="+ {{1}}" class="w3-button">&raquo;</a> -->
                 </div>
             </div>      
         </section>

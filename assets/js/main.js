@@ -1,49 +1,31 @@
-/* 
-$('#formImg').submit(function (e){
-    e.preventDefault();
+let imagem = document.querySelector('[name=img]')
+    imagem.addEventListener('change', e => {
+        let file = e.target.files[0]
+        let fileReader = new FileReader()
+        fileReader.onloadend = () =>{
+            document.querySelector('#imgPreview').setAttribute('src', fileReader.result)
+        }
+        fileReader.readAsDataURL(file)
+    })
+$('#formImg').submit(function (e) {
+    let nameImg = $('#nameImg').val()
+    let fileE = $('#img').val()
+    let Erro = $('#Erro')
 
-    let nameImg = $('#nameImg').val();
-    let file = document.getElementById('img').files[0];
-    let Erro = $('#Erro');
-
-    
-   formData.append('name', $('#nameImg').val());
-
-    if(nameImg == ''){
-        Erro.focus();
+    if (nameImg == '') {
+        e.preventDefault()
+        Erro.focus()
         Erro.css({
             display: 'block'
         })
-    } if(file == ''){
-        Erro.focus();
+        return false
+    } if (fileE == '') {
+        e.preventDefault()
+        Erro.focus()
         Erro.css({
             display: 'block'
         })
+        return false
     }
- if(file){
-        let formData = new FormData(this);
-        formData.append('image', file);
-        let xhr = new XMLHttpRequest();
-        xhr.open("POST","http://localhost/gallery-php-crud/cadastro/addImage");
-        xhr.onload = function (){
-            console.log(this.response);
-        };
-        xhr.send(formData); 
-
-         $.ajax({
-            url:'http://localhost/gallery-php-crud/cadastro/addImage',
-            method:'POST',
-            data:formData,
-            processData: false,
-            contentType: false,
-            success: function(){
-                console.log('concluido');
-            }
-        }); 
-    }
- 
-    
-});
- */
-$('#nameImg').val('');
-    $('#img').val('');
+  
+})
