@@ -17,19 +17,7 @@ class EditarController{
         $parametros['galeria'] = $galeria->selectImagem(); 
         $parametros['totalP'] = $galeria->totalP;
         $parametros['totalRegistros'] = $galeria->totalR;
-
-        return $template->render($parametros);
-    }
-    public function allReg(){
         
-        $galeria = new Gallery();
-        $galeria->selectImagem();
-        $galeria->totalP;
-        $galeria->totalR;
-
-        $parametros = array();
-        $parametros['galeria'] = $galeria->selectImagem(); 
-        $parametros['totalP'] = $galeria->totalP;
-        $parametros['totalRegistros'] = $galeria->totalR;
+        return $template->render($parametros);
     }
 }

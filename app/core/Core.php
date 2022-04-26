@@ -53,14 +53,15 @@ class Core
                         $this->method = 'index';
                         
                 }
-        } else {
+        }
+        if($request['url'] == ''){
             $page = ['CadastroController'];
             if (!isset($this->controller) || !in_array($this->controller, $page)) {
                 $this->controller = 'CadastroController';
                 $this->method = 'index';
                 
             }
-        }
+        } 
 
         return call_user_func(array(new $this->controller, $this->method), $this->params);
     }
