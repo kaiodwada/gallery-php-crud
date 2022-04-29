@@ -2,7 +2,7 @@
 require_once 'vendor/autoload.php';
 require_once 'app/core/Core.php';
 require_once 'app/controller/CadastroController.php';
-require_once 'app/controller/EditarController.php';
+
 require_once 'app/model/Gallery.php';
 require_once 'lib/Server/Connection.php';
 

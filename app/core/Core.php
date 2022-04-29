@@ -46,14 +46,7 @@ class Core
             }
         } */
 
-        if($request['url'] == 'Editar'){
-            $page = ['EditarController']; 
-                if (!isset($this->controller) || !in_array($this->controller, $page)) {
-                        $this->controller = 'EditarController';
-                        $this->method = 'index';
-                        
-                }
-        }
+     
         if($request['url'] == ''){
             $page = ['CadastroController'];
             if (!isset($this->controller) || !in_array($this->controller, $page)) {
